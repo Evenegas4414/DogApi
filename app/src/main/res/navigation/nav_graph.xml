@@ -4,27 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     android:label="List"
-    app:startDestination="@id/home_fragment">
+    app:startDestination="@id/breeds_fragment">
 
     <fragment
-        android:id="@+id/home_fragment"
-        android:name="com.ervr.myapp.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home">
+        android:id="@+id/breeds_fragment"
+        android:name="com.ervr.myapp.ui.breeds.BreedsFragment"
+        android:label="fragment_breeds"
+        tools:layout="@layout/fragment_breeds">
+        <action
+            android:id="@+id/action_breedsFragment_to_breedImagesFragment"
+            app:destination="@id/breed_images_fragment" />
+        <action
+            android:id="@+id/action_breedsFragment_to_favoritesFragment"
+            app:destination="@id/favorites_fragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/detail_fragment"
-        android:name="com.ervr.myapp.ui.detail.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail">
+        android:id="@+id/breed_images_fragment"
+        android:name="com.ervr.myapp.ui.breedImages.BreedImagesFragment"
+        android:label="fragment_breed_images"
+        tools:layout="@layout/fragment_breed_images">
+        <action
+            android:id="@+id/action_breedImagesFragment_to_breedsFragment"
+            app:destination="@id/breeds_fragment" />
+        <argument
+            android:name="breedName"
+            app:argType="string" />
+
     </fragment>
 
     <fragment
-        android:id="@+id/favorite_fragment"
-        android:name="com.ervr.myapp.ui.favorites.FavoriteFragment"
-        android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite">
+        android:id="@+id/favorites_fragment"
+        android:name="com.ervr.myapp.ui.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites">
+        <action
+            android:id="@+id/action_favoritesFragment_to_breedsFragment"
+            app:destination="@id/breeds_fragment" />
     </fragment>
 
 </navigation>
