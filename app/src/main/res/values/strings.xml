@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_favorites">Favorites</string>
+</resources>
