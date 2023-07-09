@@ -13,7 +13,8 @@
         tools:layout="@layout/fragment_breeds">
         <action
             android:id="@+id/action_breedsFragment_to_breedImagesFragment"
-            app:destination="@id/breed_images_fragment" />
+            app:destination="@id/breed_images_fragment">
+        </action>
         <action
             android:id="@+id/action_breedsFragment_to_favoritesFragment"
             app:destination="@id/favorites_fragment" />
@@ -28,9 +29,9 @@
             android:id="@+id/action_breedImagesFragment_to_breedsFragment"
             app:destination="@id/breeds_fragment" />
         <argument
-            android:name="breedName"
-            app:argType="string" />
-
+            android:name="breed"
+            app:argType="string"
+            android:defaultValue="akita" />
     </fragment>
 
     <fragment
